@@ -45,11 +45,11 @@ echo "Активую віртуальне середовище..."
 source venv/bin/activate
 
 echo "Встановлюю залежності..."
-pip install $(wget -qO- "https://github.com/kuniklo72/flashbang/raw/main/requirements.txt") > /dev/null 2>&1
+pip install $(wget -qO- "https://github.com/kuniklo72/flashbang/raw/main/requirements.txt")
 
 echo "Створюю скрипт для запуску юзербота..."
 cat > launch.sh << EOL
-#!/bin/bash
+#!/data/data/com.termux/files/usr/bin/bash
 set -e
 cd $(pwd)
 source venv/bin/activate
