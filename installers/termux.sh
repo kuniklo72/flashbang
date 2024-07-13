@@ -11,6 +11,8 @@ echo "  https://t.me/FlashbangApp  "
 echo "                             "
 set -e
 
+rm -fr flashbang/ > /dev/null 2>&1
+
 echo "Оновлюю пакунки..."
 pkg upgrade -y > /dev/null 2>&1 || { echo "Помилка при оновленні пакунків"; exit 1; }
 
@@ -43,8 +45,7 @@ echo "Активую віртуальне середовище..."
 source venv/bin/activate
 
 echo "Встановлюю залежності..."
-pip install $(wget -qO- "https://github.com/kuniklo72/flashbang/raw/main/requirements.txt")
- > /dev/null 2>&1
+pip install $(wget -qO- "https://github.com/kuniklo72/flashbang/raw/main/requirements.txt") > /dev/null 2>&1
 
 echo "Створюю скрипт для запуску юзербота..."
 cat > launch.sh << EOL
