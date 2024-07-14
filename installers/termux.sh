@@ -59,9 +59,9 @@ cd -
 EOL
 
 chmod +x launch.sh
-mkdir ~/.shortcuts
-cp launch.sh ~/.shortcuts/flashbang.sh
-chmod +x ~/.shortcuts/flashbang.sh
+mkdir ~/.shortcuts > /dev/null 2>&1
+cp launch.sh ~/.shortcuts/flashbang.sh > /dev/null 2>&1
+chmod +x ~/.shortcuts/flashbang.sh > /dev/null 2>&1
 
 echo "Встановлення завершено успішно!"
 echo ""
